@@ -1,0 +1,40 @@
+<h5 class="title">Lista de salidas</h5>
+<div class="container divSalidas">
+    <div class="card-deck scroll-horizontal">
+      <mwl-calendar-month-view #calendar [weekStartsOn]="1" [viewDate]="viewDate" [headerTemplate]="customHeader" (dayClicked)="cambiarSalidas($event)" ></mwl-calendar-month-view>
+      <ng-template #customHeader let-days="days">
+        <div class="cal-cell-row cal-header">
+          <div class="cal-cell" (click)="prevYear()" >&lt;</div>
+          <div class="cal-cell">{{ myDate.getFullYear() }}</div>
+          <div class="cal-cell" (click)="nextYear()" >&gt;</div>
+        </div>
+        <div class="cal-cell-row cal-header">
+          <div class="cal-cell" (click)="prevMonth()">&lt;</div>
+          <div class="cal-cell">{{ monthsHeader[myDate.getMonth()] }}</div>
+          <div class="cal-cell" (click)="nextMonth()">&gt;</div>
+        </div>
+        <div class="cal-cell-row cal-header">
+          <div class="cal-cell" *ngFor="let dayHeader of dayHeaders">{{dayHeader}}</div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="salidasHorarios">
+    <div class="card card-header" *ngIf="diaSelecionado != 0" >
+      <div *ngIf="getSalidasDiaSeleccionado().length;then content else other_content"></div>
+      <ng-template #content>
+        <span>Salidas del día {{ diaSelecionado }} de {{ monthsHeader[myDate.getMonth()] }} del {{ myDate.getFullYear() }}</span>
+      </ng-template>
+      <ng-template #other_content>
+        <span>No hay ninguna salida el día {{ diaSelecionado }} de {{ monthsHeader[myDate.getMonth()] }} del {{ myDate.getFullYear() }}😢</span>
+      </ng-template>
+    </div>
+    <div class="divSalidasHorarios">
+      <div class="card divSalida" *ngFor="let salida of getSalidasDiaSeleccionado()">
+        <app-salida [salida]="salida"></app-salida>
+      </div>
+    </div>
+    <div class="divNuevaSalida" *ngIf="getSalidasDiaSeleccionado().length < aguaConfiguracion.maxSalidasPorDia" >
+      <button class="btnCrearSalida" (click)="crearSalida()" >CREAR SALIDA</button>
+    </div>
+  </div>

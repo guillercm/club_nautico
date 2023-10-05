@@ -1,0 +1,41 @@
+<div class="container divSocios">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 w-auto">
+        <div class="card">
+          <div class="card-header">
+            <h3>Listado de socios</h3>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <!-- <th>ID</th> -->
+                  <th>DNI</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Barcos</th>
+                  <th>Actualizar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let socio of getSocios()">
+                  <!-- <td>{{socio.id}}</td> -->
+                  <td><input type="text" [(ngModel)]="socio.dni" placeholder="dni" class="inputAsP"/></td>
+                  <td><input type="text" [(ngModel)]="socio.nombre" placeholder="nombre" class="inputAsP" /></td>
+                  <td><input type="text" [(ngModel)]="socio.apellido" placeholder="apellido" class="inputAsP" /></td>
+                  <td class="position-relative">
+                    <app-barco [barcos]="socio.barcos" ></app-barco>
+                  </td>
+                  <td>
+                    <button [disabled]="!btnActivado" type="button" class="btn btn-success btn-lg refresh-btn" (click)="actualizarSocio(socio)" >
+                      Actualizar
+                    </button>                  
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,123 @@
+[
+  {
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "dni": "12345678A",
+    "barcos": [
+      {
+        "num_matricula": "123ABC",
+        "nombre": "Barco de Juan",
+        "num_amarre": "A1",
+        "cuota": 500,
+        "salidas": [
+          {
+            "fechaHoraSalida": "2023-04-20T10:30:00",
+            "destino": "Isla de la Toja",
+            "patron": {
+              "dniPatron": "87654321B"
+            },
+            "anulada": true,
+            "motivoAnulacion": "Le operan al capitán ese día"
+          },
+          {
+            "fechaHoraSalida": "2023-04-21T14:45:00",
+            "destino": "Isla de Arousa",
+            "patron": {
+              "nombrePatron": "Juan",
+              "apellidosPatron": "Pérez García",
+              "dniPatron": "76543210C"
+            },
+            "anulada": false
+          },
+          {
+            "fechaHoraSalida": "2023-04-21T16:45:00",
+            "destino": "Publo Paleta",
+            "patron": {
+              "dniPatron": "65432109D"
+            },
+            "anulada": false
+          }
+        ]
+      },
+      {
+        "num_matricula": "456DEF",
+        "nombre": "Otro barco de Juan",
+        "num_amarre": "B2",
+        "cuota": 750,
+        "salidas": [
+          {
+            "fechaHoraSalida": "2023-04-22T09:15:00",
+            "destino": "Portonovo",
+            "patron": {
+              "dniPatron": "54321098E"
+            },
+            "anulada": false
+          },
+          {
+            "fechaHoraSalida": "2023-04-23T11:00:00",
+            "destino": "Isla de la Toja",
+            "patron": {
+              "dniPatron": "43210987F"
+            },
+            "anulada": false
+          },
+          {
+            "fechaHoraSalida": "2023-04-23T12:00:00",
+            "destino": "Isla de la Toja",
+            "patron": {
+              "dniPatron": "32109876G"
+            },
+            "anulada": false
+          },
+          {
+            "fechaHoraSalida": "2023-04-23T13:00:00",
+            "destino": "Isla de la Toja",
+            "patron": {
+              "dniPatron": "21098765H"
+            },
+            "anulada": false
+          },
+          {
+            "fechaHoraSalida": "2023-04-23T14:00:00",
+            "destino": "Isla de la Toja",
+            "patron": {
+              "dniPatron": "10987654I"
+            },
+            "anulada": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "María",
+    "apellido": "González",
+    "dni": "87654321B",
+    "barcos": [
+      {
+        "num_matricula": "789GHI",
+        "nombre": "Barco de María",
+        "num_amarre": "C3",
+        "cuota": 600,
+        "salidas": [
+          {
+            "fechaHoraSalida": "2023-04-24T12:30:00",
+            "destino": "Ría de Vigo",
+            "patron": {
+              "dniPatron": "09876543J"
+            },
+            "anulada": false
+          },
+          {
+            "fechaHoraSalida": "2023-04-25T16:00:00",
+            "destino": "Isla de Ons",
+            "patron": {
+              "dniPatron": "98765432K"
+            },
+            "anulada": false
+          }
+        ]
+      }
+    ]
+  }
+]

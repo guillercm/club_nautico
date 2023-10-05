@@ -1,0 +1,52 @@
+[
+  {
+    "nombrePatron": "Barbanegra",
+    "apellidosPatron": "González García",
+    "dniPatron": "87654321B"
+  },
+  {
+    "nombrePatron": "Neptuno",
+    "apellidosPatron": "Fernández Rodríguez",
+    "dniPatron": "76543210C"
+  },
+  {
+    "nombrePatron": "Jack Sparrow",
+    "apellidosPatron": "Martínez Sánchez",
+    "dniPatron": "65432109D"
+  },
+  {
+    "nombrePatron": "Ahab",
+    "apellidosPatron": "Gómez Pérez",
+    "dniPatron": "54321098E"
+  },
+  {
+    "nombrePatron": "Sinbad",
+    "apellidosPatron": "López Ruiz",
+    "dniPatron": "43210987F"
+  },
+  {
+    "nombrePatron": "Ramírez",
+    "apellidosPatron": "García Cortina",
+    "dniPatron": "32109876G"
+  },
+  {
+    "nombrePatron": "Morgan",
+    "apellidosPatron": "Sánchez González",
+    "dniPatron": "21098765H"
+  },
+  {
+    "nombrePatron": "Nemo",
+    "apellidosPatron": "Hernández Martínez",
+    "dniPatron": "10987654I"
+  },
+  {
+    "nombrePatron": "Pirata Roberts",
+    "apellidosPatron": "García López",
+    "dniPatron": "09876543J"
+  },
+  {
+    "nombrePatron": "Davy Jones",
+    "apellidosPatron": "Rodríguez Fernández",
+    "dniPatron": "98765432K"
+  }
+]

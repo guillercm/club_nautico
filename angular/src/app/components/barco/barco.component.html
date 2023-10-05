@@ -1,0 +1,20 @@
+<div *ngIf="barcos">
+  <ul>
+    <li class="align-center" *ngFor="let barco of barcos">
+      <div class="divBarco">
+        <div class="divBarco_1">
+          <img class="imgBarco rounded-circle img-thumbnail img-fluid" src="assets/images/barco.png" alt="Barco">
+        </div>
+        <div class="divBarco_2">
+          <ul>
+            <li><span>Matrícula: </span><input type="text" [(ngModel)]="barco.num_matricula" class="inputAsP" /></li>
+            <li><span>Nombre: </span><input type="text" [(ngModel)]="barco.nombre" class="inputAsP" /></li>
+            <li><span>Amarre: </span><input type="text" [(ngModel)]="barco.num_amarre" class="inputAsP"/></li>
+            <li><span>Cuota: </span><input type="number" min="0" [(ngModel)]="barco.cuota" class="inputAsP"/></li>
+          </ul>
+          <app-salidas [salidas]="barco.salidas" ></app-salidas>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

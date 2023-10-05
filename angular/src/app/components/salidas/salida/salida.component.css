@@ -1,0 +1,17 @@
+select {
+    max-width: 100%;
+}
+
+.salidaAnulada {
+    border: 1px solid red;
+    background-color: rgba(222, 86, 86, 0.516);
+    color: white;
+    font-weight: bold;
+}
+.imgCapitan {
+    max-width: 100%;
+    border-radius: 50%;
+}
+.inputDestino {
+    width: 90%;
+}

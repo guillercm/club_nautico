@@ -1,0 +1,26 @@
+<div class="card-body" *ngIf="salida">
+    <p class="card-text"><strong>
+      <!-- <input type="text" *ngIf="salida.fechaHoraSalida" [(ngModel)]="salida.fechaHoraSalida" class="inputAsP" /> -->
+      <input type="time" [disabled]="salida.anulada" [value]="time" class="inputAsP" (input)="onTimeChange($event)">
+      {{ salida.fechaHoraSalida | date:'h:mm a' }}</strong></p>
+    <p class="card-text"><strong>📍</strong><input type="text" class="inputAsP inputDestino" [(ngModel)]="salida.destino" [disabled]="salida.anulada" ></p>
+    <div class="salidaAnulada" *ngIf="salida.anulada">
+      <p>ANULADA</p>
+      <p>Motivo: {{salida.motivoAnulacion}}</p>
+    </div>
+    <button  class="salidaAnulada" *ngIf="!salida.anulada" (click)="anularSalida()" >Anular</button>
+    <p  class="card-text">Capitán:</p>
+    <select [(ngModel)]="selectedPatronId" (ngModelChange)="onChange()" [disabled]="salida.anulada" >
+        <option *ngFor="let capitan of getCapitanes()" [value]="capitan.id">
+          {{capitan.nombrePatron}} {{capitan.apellidosPatron}}
+        </option>
+    </select>
+    <div class="divCapitanes">
+      <div class="divCapitan" *ngIf="salida.patron" >
+        <div class="card-body">
+         {{getCapitan().nombrePatron}}
+         <img [src]="'assets/images/capitanes/' + getCapitan().dniPatron + '.png'" class="imgCapitan">
+        </div>
+      </div>
+    </div><br>
+  </div>

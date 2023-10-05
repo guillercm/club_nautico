@@ -1,0 +1,181 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+.inputAsP {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5rem;
+  background-color: transparent;
+  color: inherit;
+  width: 50%;
+}
+
+.inputAsP:not(:disabled) {
+  border-bottom: 1px solid black;
+}
+ul li {
+    list-style: none;
+}
+
+.cal-month-view .cal-day-cell {
+    min-height: 0;
+}
+
+.cal-month-view .cal-day-number {
+    font-size: 1.2em;
+    font-weight: 400;
+    opacity: 0.5;
+    margin-top: 0; 
+    margin-right: 0;
+    float: right;
+    margin-bottom:0px;
+    font-weight: bold;
+}
+
+.cal-month-view .cal-cell-top {
+    min-height: 0;
+    flex: 1;
+}
+.cal-cell-top span {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: auto;
+    max-height: 100vh;
+    flex-wrap: wrap;
+}
+.cal-month-view .cal-day-number {
+    font-size: 1.2em !important;
+    position: absolute;
+    z-index: 2;
+}
+.cal-month-view .cal-cell {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    position: relative;
+}
+button.cal-month-arrow::before,
+button.cal-month-arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: currentColor;
+  transform: rotate(45deg);
+}
+
+button.cal-month-arrow::before {
+  left: 0.5rem;
+}
+.cal-out-month {
+    pointer-events: none;
+}
+button.cal-month-arrow::after {
+  right: 0.5rem;
+  transform: rotate(-45deg);
+}
+.cal-event:not(.diaSelecionado) {
+    background-color: transparent !important;
+}
+.diaSelecionado {
+    background: url("assets/images/ancla.png");
+    background-size: cover;
+    width: 70% !important;
+    background-color: white !important;
+    border-radius: 50%;
+    border: 1px solid;
+    height: 70% !important;
+    position: absolute;
+    z-index: 3;
+    padding: 2px;
+}
+
+
+* {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+} 
+
+
+:root{
+    /*¿Altura del liquido*/
+    --liquid: 10%;
+    /*Altura de la onda
+    * Siendo 0.5 (cero) el minimo
+    * y 0.99 (cero) el maximo*/
+    --h-wave: 0.7;
+    /*¿Color del borde?*/
+    --cl-bd: blue;
+    /*¿Color del liquido?*/
+    --cl-lq: #6c77ff;
+    /*¿Grosor del borde*/
+    --bd: 0;
+    /*¿Ancho del contenedor*/
+    --w-cnt: 28px;
+    /*¿Cuantas cajas son?*/
+    --n-box: 1;
+    /*Ancho del contenedor menos el ancho de los bordes del contenedor*/
+    --wlessbd: calc(var(--w-cnt) - ( (var(--bd) * 2) ) );
+    /*¿Medida automatica de las cajas?*/
+    --s-box: calc(  var(--wlessbd) / var(--n-box) );
+  }
+  
+  .divAgua {
+    width: var(--w-cnt);
+    height: var(--w-cnt);
+    margin: auto;
+    border: solid var(--bd) var(--cl-bd);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  
+  
+  
+  
+  
+  .divAgua::before,
+  .divAgua::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--cl-lq);
+    height: var(--liquid);
+    bottom: 0;
+    left: 0;
+  }
+  
+  .divAgua::before{
+    z-index: 2;
+    width: 100%;
+    transform-origin: 50% 100%;
+    animation: wave-shrink 3s linear infinite;
+  }
+  
+  .divAgua::after{
+    z-index: 1;
+    width: 200%;
+    border-radius: 50%;
+    animation: wave-sway 5s linear infinite;
+  }
+  
+  @keyframes wave-shrink{
+    50%{ transform: scaleY(var(--h-wave));}
+  }
+  
+  @keyframes wave-sway{
+    0%{ transform: translateX(-100%);}
+    100%{ transform: translateX(100%);}
+  }

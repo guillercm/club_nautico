@@ -1,0 +1,24 @@
+Socio("socios")
+	String nombre
+	String apellido
+	String dni
+	List<Barco> barcos @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+Barco("barcos")
+	String num_matricula
+	String nombre
+	String num_amarre
+	Long cuota
+	List<Salida> salidas @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+Patron("patrones")
+	String nombrePatron
+	String apellidosPatron
+	String dniPatron
+
+Salida("salidas")
+	LocalDateTime fechaHoraSalida
+	String destino
+	Boolean anulada
+	String motivoAnulacion @Nullable
+	Patron patron @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
